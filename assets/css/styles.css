@@ -139,8 +139,7 @@ p
 }
 ul
 {
-  list-style-image: url('droplet-solid.svg');
-  padding-top: 15px;
+  list-style:none;
 }
 .section-title {
     /* height: 10%; */
