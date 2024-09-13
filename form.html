@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fo-nt-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Contact Form</title>
+    <style>
+        *
+        {
+            justify-content: center;
+        }
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: 'Times New Roman', Times, serif;
+            background: #40E0D0;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #FF0080, #FF8C00, #40E0D0);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #FF0080, #FF8C00, #40E0D0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+        }
+        .center-form {
+            width: 30%;
+            padding: 10px;
+            background: #ec008c;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #fc6767, #ec008c);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #fc6767, #ec008c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+            border-radius: 15px;
+            justify-content: center;
+            height: auto;
+            box-shadow:
+  0px 0px 5px rgba(0, 0, 0, 0.015),
+  0px 0px 8.7px rgba(0, 0, 0, 0.022),
+  0px 0px 11.6px rgba(0, 0, 0, 0.027),
+  0px 0px 13.8px rgba(0, 0, 0, 0.031),
+  0px 0px 15.8px rgba(0, 0, 0, 0.035),
+  0px 0px 17.8px rgba(0, 0, 0, 0.039),
+  0px 0px 20px rgba(0, 0, 0, 0.043),
+  0px 0px 23.2px rgba(0, 0, 0, 0.048),
+  0px 0px 28.5px rgba(0, 0, 0, 0.055),
+  0px 0px 45px rgba(0, 0, 0, 0.07)
+;
+            animation: myanimation 1s ease-in-out;
+        }
+        .content {
+            border-radius: 10px;
+            text-align: center;
+            justify-content: center;
+            border-style: none;
+        }
+        input
+        {
+            border-radius: 10px;
+            padding: 15px;
+            width: 80%;
+            border: none;
+        }
+        #name
+        {
+            border-bottom: 10px;
+            border-color: blueviolet;
+        }
+        .button
+        {
+            color:white;
+            background-color: blueviolet;
+            padding: 15px;
+            width: 85%;
+            border-radius: 10px;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: large;
+            border-style: none;
+            margin-bottom: 10px;
+        }
+        @keyframes myanimation {
+            0%
+            {
+                transform: translateX(-210%);
+                scale: 70%;
+            }
+            100%{
+                transform: translateX(0%);
+                scale: 100%;
+            }
+        }
+        @media only screen and (max-width:1000px)
+        {
+            .center-form
+            {
+                width: 50%;
+            }
+        }
+        @media only screen and (max-width:600px)
+        {
+            .center-form
+            {
+                width: 80%;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+        
+    <form class="center-form" onsubmit="form_data(event)">
+        <h1><center>Contact Form</center></h1>
+        <div class="content">
+            <input type="text" name="name" id="name" placeholder="Name"><br><br>
+            <input type="email" name="email" id="email" placeholder="Email" required><br><br>
+            <input type="phone" name="phone" id="phone" placeholder="Phone" required><br><br>
+            <input type="number" name="age" id="age" placeholder="age" required><br><br>
+            <input type="password" name="password" id="password" placeholder="Password" required><br><br>
+            <button type="submit" class="button">Register</button>
+        </div>
+    </form>
+    <script>
+        function form_data(e)
+        {
+        e.preventDefault();
+         let name=document.getElementById("name").value;
+         let email=document.getElementById("email").value;
+         let phone=document.getElementById("phone").value;
+         let password=document.getElementById("password").value;
+         let age=document.getElementById("age").value;
+          const data = {
+            username :name,
+            useremail :email,
+            userphone :phone,
+            userage :age,
+            usertype : (age >=18 )? "Major":"Minor"
+          };
+          if(name === "" || email === "")
+          {
+            console.log("user name / email empty");
+          }
+          else if(name === "Jagadheesh" || email==="jagadheesh2005@gmail.com")
+          {
+            console.log("Name Already exists");
+          }
+          else
+          {
+            console.log("Registered Successfully");
+          }
+          const {username , useremail , usertype,userage} =data;
+          console.log(username);
+          console.log(useremail);
+          console.log(userage);
+          console.log(usertype);
+        }
+        </script>
+</body>
+</html>
